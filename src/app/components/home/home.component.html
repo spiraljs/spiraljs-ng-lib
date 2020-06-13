@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>SpiralJS Angular Library</h2>
+    <p>Angular Library from SpiralJS</p>
+    <br>
+    <button class="btn btn-info" (click)="createDate()">Create SpiralDate</button>
+    <div *ngIf="this.spiralDate">
+        <label>{{this.spiralDate.Value}}</label>
+        &nbsp;
+        <button class="btn btn-warning" (click)="moveDateToPreviousDay()">Previous</button>
+        &nbsp;
+        <button class="btn btn-warning" (click)="moveDateToNextDay()">Next</button>
+    </div>
+</div>

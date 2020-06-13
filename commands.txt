@@ -1,0 +1,4 @@
+ng build spiraljs-ng-lib
+
+#to generate tgz
+npm pack

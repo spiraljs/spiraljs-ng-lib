@@ -1,0 +1,40 @@
+Registered user object:
+-----------------------
+{
+    "username":"sabitha-ali",
+    "pool":{
+        "userPoolId":"us-east-1_I5krPyoup",
+        "clientId":"2scvn8aia5imm1bgskkjb5skuk",
+        "client":{
+            "endpoint":"https://cognito-idp.us-east-1.amazonaws.com/",
+            "userAgent":"aws-amplify/0.1.x js"},
+        "advancedSecurityDataCollectionFlag":true,
+        "storage":{
+            "CognitoIdentityServiceProvider.2scvn8aia5imm1bgskkjb5skuk.orbitsolve-akbar.clockDrift":"2",
+            "CognitoIdentityServiceProvider.6uhdv86n8pc0fspoind1clug3n.LastAuthUser":"akbar-hussain",
+            "CognitoIdentityServiceProvider.6uhdv86n8pc0fspoind1clug3n.akbar-hussain.idToken":"eyJraWQi....",
+            "AZCO_USER":"{\"User\":{\"UserId\":38,\"UserName\":\"jdave\",\"FirstName\":\"Dave\",\"LastName\":\"Johnson\",\"RoleId\":2,\"RoleName\":\"BasicUser\"},\"StartedOn\":\"2019-07-16T04:13:28.707Z\",\"ExpiryBy\":\"2019-07-16T04:33:28.707Z\",\"Duration\":20}",
+            "google_experiment_mod":"578",
+            "CognitoIdentityServiceProvider.6uhdv86n8pc0fspoind1clug3n.akbar-hussain.clockDrift":"1",
+            "CognitoIdentityServiceProvider.2scvn8aia5imm1bgskkjb5skuk.talent-aquisition.clockDrift":"7",
+            "CognitoIdentityServiceProvider.2scvn8aia5imm1bgskkjb5skuk.fapi-orbit,.clockDrift":"10",
+            "CognitoIdentityServiceProvider.6uhdv86n8pc0fspoind1clug3n.akbar-hussain.refreshToken": "eyJraWQi....",
+            "CognitoIdentityServiceProvider.6uhdv86n8pc0fspoind1clug3n.akbar-hussain.accessToken":"eyJraWQi...."
+            }
+            },
+            "Session":null,
+            "client":{
+                "endpoint":"https://cognito-idp.us-east-1.amazonaws.com/",
+                "userAgent":"aws-amplify/0.1.x js"
+        },
+        "signInUserSession":null,"authenticationFlowType":"USER_SRP_AUTH",
+        "storage":{
+            "CognitoIdentityServiceProvider.2scvn8aia5imm1bgskkjb5skuk.orbitsolve-akbar.clockDrift":"2",
+            "CognitoIdentityServiceProvider.6uhdv86n8pc0fspoind1clug3n.LastAuthUser":"akbar-hussain",
+            "CognitoIdentityServiceProvider.6uhdv86n8pc0fspoind1clug3n.akbar-hussain.idToken":"eyJraWQiOi...",
+            "AZCO_USER":"{\"User\":{\"UserId\":38,\"UserName\":\"jdave\",\"FirstName\":\"Dave\",\"LastName\":\"Johnson\",\"RoleId\":2,\"RoleName\":\"BasicUser\"},\"StartedOn\":\"2019-07-16T04:13:28.707Z\",\"ExpiryBy\":\"2019-07-16T04:33:28.707Z\",\"Duration\":20}","google_experiment_mod":"578","CognitoIdentityServiceProvider.6uhdv86n8pc0fspoind1clug3n.akbar-hussain.clockDrift":"1","CognitoIdentityServiceProvider.2scvn8aia5imm1bgskkjb5skuk.talent-aquisition.clockDrift":"7","CognitoIdentityServiceProvider.2scvn8aia5imm1bgskkjb5skuk.fapi-orbit,.clockDrift":"10","CognitoIdentityServiceProvider.6uhdv86n8pc0fspoind1clug3n.akbar-hussain.refreshToken":"eyJjdHkiOi...",
+            "CognitoIdentityServiceProvider.6uhdv86n8pc0fspoind1clug3n.akbar-hussain.accessToken":"eyJraWQiOi..."
+        },
+        "keyPrefix":"CognitoIdentityServiceProvider.2scvn8aia5imm1bgskkjb5skuk",
+        "userDataKey":"CognitoIdentityServiceProvider.2scvn8aia5imm1bgskkjb5skuk.sabitha-ali.userData"
+    }
