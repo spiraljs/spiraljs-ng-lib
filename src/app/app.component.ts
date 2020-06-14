@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'OrbitSolve Library - Angular';
+  title = 'SpiralJS';
   navbarOpen = false;
   @ViewChild('navBarButton', {read: ElementRef}) private navBarButton: ElementRef; 
   @ViewChild('navMenu') private navMenu: ElementRef; 
