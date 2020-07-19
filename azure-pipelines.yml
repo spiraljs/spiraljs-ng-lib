@@ -27,3 +27,11 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+- task: AzureFileCopy@4
+  inputs:
+    SourcePath: '$(Build.ArtifactStagingDirectory)/dist/*.*'
+    azureSubscription: 'Azure subscription 1(bf0da187-bb88-41b0-b479-f7fd1a5b8666)'
+    Destination: 'AzureBlob'
+    storage: 'spiraljsnglibtest'
+    ContainerName: 'test'
