@@ -24,13 +24,13 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/dist/os-ng-library/*.*'
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
 - task: AzureFileCopy@4
   inputs:
-    SourcePath: '$(Build.ArtifactStagingDirectory)/dist/*.*'
+    SourcePath: '$(Build.ArtifactStagingDirectory)/dist/os-ng-library/*.*'
     azureSubscription: 'Azure subscription 1(bf0da187-bb88-41b0-b479-f7fd1a5b8666)'
     Destination: 'AzureBlob'
     storage: 'spiraljsnglibtest'
