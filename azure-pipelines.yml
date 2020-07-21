@@ -22,12 +22,6 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/dist/os-ng-library/*.*'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
-
 - task: AzureFileCopy@4
   inputs:
     SourcePath: '$(Build.ArtifactStagingDirectory)/dist/os-ng-library/*.*'
