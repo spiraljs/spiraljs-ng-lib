@@ -29,10 +29,10 @@ jobs:
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/spiraljs-ng-lib/*.tgz'
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/spiraljs-ng-lib/spiraljs-ng-lib*.tgz'
         includeRootFolder: false
         archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/dist/spiraljs-ng-lib/$(Build.BuildId).zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
         replaceExistingArchive: true
     - task: PublishPipelineArtifact@1
       inputs:
@@ -42,6 +42,7 @@ jobs:
 
   - job:
     displayName: 'Preparing Client Build'
+    dependsOn: []
     steps:
     - task: NodeTool@0
       inputs:
@@ -61,7 +62,7 @@ jobs:
         rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/spiraljs-ng-lib-test'
         includeRootFolder: false
         archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/dist/spiraljs-ng-lib-test/$(Build.BuildId).zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
         replaceExistingArchive: true
     - task: PublishPipelineArtifact@1
       inputs:
