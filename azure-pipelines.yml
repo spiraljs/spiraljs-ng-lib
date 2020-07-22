@@ -22,9 +22,17 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
+  task: ArchiveFiles@2
+    displayName: 'Archive files'
+    inputs:
+      rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/spiraljs-ng-lib-test'
+      includeRootFolder: false
+      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+      replaceExistingArchive: true
 - task: AzureFileCopy@4
   inputs:
-    SourcePath: '$(Build.Repository.LocalPath)/dist/os-ng-library/*.*'
+    SourcePath: '$(Build.Repository.LocalPath)/$(Build.BuildId).zip'
     azureSubscription: 'Azure subscription 1(bf0da187-bb88-41b0-b479-f7fd1a5b8666)'
     Destination: 'AzureBlob'
     storage: 'spiraljsnglibtest'
