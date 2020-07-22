@@ -22,17 +22,17 @@ jobs:
         npm install -g @angular/cli
         npm install
         ng build spiraljs-ng-lib
-        cd dist/spiraljs-ng-lib
-        npm pack
+        # cd dist/spiraljs-ng-lib
+        # npm pack
       displayName: 'npm install and build library'
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/spiraljs-ng-lib/spiraljs-ng-lib*.tgz'
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/spiraljs-ng-lib'
         includeRootFolder: false
-        archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        archiveType: 'tar'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).tgz'
         replaceExistingArchive: true
     - task: PublishPipelineArtifact@1
       inputs:
