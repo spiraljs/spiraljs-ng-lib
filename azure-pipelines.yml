@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-2019'
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: NodeTool@0
@@ -30,13 +30,14 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
-- task: AzureFileCopy@4
-  inputs:
-    SourcePath: '$(Build.Repository.LocalPath)/$(Build.BuildId).zip'
-    azureSubscription: 'Azure subscription 1(bf0da187-bb88-41b0-b479-f7fd1a5b8666)'
-    Destination: 'AzureBlob'
-    storage: 'spiraljsnglibtest'
-    ContainerName: 'test'
+
+# - task: AzureFileCopy@4
+#   inputs:
+#     SourcePath: '$(Build.Repository.LocalPath)/$(Build.BuildId).zip'
+#     azureSubscription: 'Azure subscription 1(bf0da187-bb88-41b0-b479-f7fd1a5b8666)'
+#     Destination: 'AzureBlob'
+#     storage: 'spiraljsnglibtest'
+#     ContainerName: 'test'
 
 
 
