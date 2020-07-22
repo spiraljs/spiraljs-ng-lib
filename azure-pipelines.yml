@@ -11,7 +11,7 @@ pool:
 
 jobs:
   - job:
-    displayName: 'Preparing Angular build'
+    displayName: 'Preparing Library Package'
     steps:
     - task: NodeTool@0
       inputs:
@@ -19,11 +19,41 @@ jobs:
       displayName: 'Install Node.js'
 
     - script: |
-        # npm install -g @angular/cli
+        npm install -g @angular/cli
+        npm install
+        ng build spiraljs-ng-lib
+        cd dist/spiraljs-ng-lib
+        npm pack
+      displayName: 'npm install and build library'
+
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/spiraljs-ng-lib/*.tgz'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/dist/spiraljs-ng-lib/$(Build.BuildId).zip'
+        replaceExistingArchive: true
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)'
+        artifact: 'library'
+        publishLocation: 'pipeline'
+
+  - job:
+    displayName: 'Preparing Client Build'
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '10.x'
+      displayName: 'Install Node.js'
+
+    - script: |
+        npm install -g @angular/cli
         npm install
         ng build spiraljs-ng-lib
         ng build --prod
-      displayName: 'npm install and build'
+      displayName: 'npm install and build client'
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
@@ -31,10 +61,10 @@ jobs:
         rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/spiraljs-ng-lib-test'
         includeRootFolder: false
         archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/dist/spiraljs-ng-lib-test/$(Build.BuildId).zip'
         replaceExistingArchive: true
     - task: PublishPipelineArtifact@1
       inputs:
         targetPath: '$(Build.ArtifactStagingDirectory)'
         artifact: 'client'
-        publishLocation: 'pipeline'
+        publishLocation: 'pipeline'        
