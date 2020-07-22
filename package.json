@@ -1,5 +1,5 @@
 {
-  "name": "spiraljs-ng-lib",
+  "name": "spiraljs-ng-lib-test",
   "author": {
     "name": "Akbar Ali Hussain"
   },
@@ -28,8 +28,6 @@
     "bootstrap": "^4.4.1",
     "core-js": "^3.6.4",
     "jquery": "^3.4.1",
-    "os-ng-auth-cognito": "file:dist/os-ng-auth-cognito",
-    "os-ng-core": "file:dist/os-ng-core",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
