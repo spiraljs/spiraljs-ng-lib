@@ -1,5 +1,5 @@
 # spiraljs-ng-lib
-Angular Libraries for multiple functionalities 
+This is an Angular project which contains a library **spiraljs-ng-lib**  
 
 # TypeScript Classes
 ### This library contains below classes
